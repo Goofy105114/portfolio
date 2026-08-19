@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is the personal portfolio of Ankit Verma, focused on AI/ML, software engineering, and GIGCEL visual storytelling.
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,7 +16,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Deploy on Netlify
+
+1. Push this repository to GitHub.
+2. In Netlify, choose **Add new site** and **Import an existing project**.
+3. Select the GitHub repository.
+4. Netlify will read `netlify.toml` and use `npm run build`.
+5. Choose **Deploy site**.
+
+The configuration uses Netlify&apos;s Next.js runtime plugin for the App Router and client-side Three.js background.
 
 ## Learn More
 
