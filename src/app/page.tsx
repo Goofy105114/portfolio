@@ -43,7 +43,7 @@ export default function Home() {
 
         <section className="hero section-wrap" id="home">
           <div className="hero-copy reveal">
-            <h1>Hi, I&apos;m Ankit Verma<br /><span>Frontend Developer</span></h1>
+            <h1><strong>Ankit Verma</strong></h1>
             <p className="hero-intro">I build thoughtful digital experiences with a blend of software engineering, AI thinking, and visual storytelling.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">Hire Me</a>
