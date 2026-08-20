@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 import ThreeField from "@/components/ThreeField";
 import CursorDot from "@/components/CursorDot";
 
-const navItems = ["Home", "About", "Services", "Portfolio", "Contact"];
+const navItems = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#ai-ml" },
+  { label: "Portfolio", href: "#work" },
+  { label: "Contact", href: "#contact" },
+];
 const resumeUrl = "/resume";
 const projects = [
   { number: "01", category: "PRODUCT / MOBILE", title: "MatsyaSetu App", description: "A TypeScript application exploring a focused product experience.", tags: ["TypeScript", "App"], href: "https://github.com/Goofy105114/MatsyaSetu-App", code: "const project = 'matsyasetu-app';" },
@@ -22,9 +28,9 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const sections = ["home", ...navItems.map((item) => item.toLowerCase().replace("/", "-"))];
+    const sections = navItems.map((item) => item.href.slice(1));
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) setActiveSection(entry.target.id === "home" ? "Home" : navItems.find((item) => item.toLowerCase().replace("/", "-") === entry.target.id) || "Home");
+      if (entry.isIntersecting) setActiveSection(navItems.find((item) => item.href === `#${entry.target.id}`)?.label || "Home");
     }), { rootMargin: "-35% 0px -55%" });
     sections.forEach((id) => { const node = document.getElementById(id); if (node) observer.observe(node); });
     return () => observer.disconnect();
@@ -35,8 +41,8 @@ export default function Home() {
       <CursorDot />
       <nav className="nav-shell" aria-label="Primary navigation">
         <a className="brand" href="#home" onClick={() => setMenuOpen(false)}><span className="brand-mark">A</span><span>Ankit Verma<span className="brand-dot">.</span></span></a>
-          <button className="menu-toggle" aria-expanded={menuOpen} aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
-          <div className={`nav-links ${menuOpen ? "is-open" : ""}`}>{navItems.map((item) => <a key={item} className={activeSection === item ? "active" : ""} href={item === "Home" ? "#home" : `#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{item}</a>)}</div>
+        <button className="menu-toggle" aria-expanded={menuOpen} aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
+        <div className={`nav-links ${menuOpen ? "is-open" : ""}`}>{navItems.map((item) => <a key={item.label} className={activeSection === item.label ? "active" : ""} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>)}</div>
         <a className="nav-contact" href={resumeUrl}>Resume <Arrow /></a>
       </nav>
 
