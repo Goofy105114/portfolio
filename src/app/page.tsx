@@ -7,8 +7,10 @@ import CursorDot from "@/components/CursorDot";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#ai-ml" },
-  { label: "Portfolio", href: "#work" },
+  { label: "Work", href: "#work" },
+  { label: "AI/ML", href: "#ai-ml" },
+  { label: "GIGCEL", href: "#gigcel" },
+  { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
 ];
 const resumeUrl = "/resume";
@@ -40,10 +42,13 @@ export default function Home() {
     <main>
       <CursorDot />
       <nav className="nav-shell" aria-label="Primary navigation">
-        <a className="brand" href="#home" onClick={() => setMenuOpen(false)}><span className="brand-mark">A</span><span>Ankit Verma<span className="brand-dot">.</span></span></a>
+        <div className="brand-block">
+          <a className="brand" href="#home" onClick={() => setMenuOpen(false)}><span className="brand-mark">A</span><span>Ankit Verma<span className="brand-dot">.</span></span></a>
+          <a className="nav-resume" href={resumeUrl}>Resume <Arrow /></a>
+        </div>
         <button className="menu-toggle" aria-expanded={menuOpen} aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
         <div className={`nav-links ${menuOpen ? "is-open" : ""}`}>{navItems.map((item) => <a key={item.label} className={activeSection === item.label ? "active" : ""} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>)}</div>
-        <a className="nav-contact" href={resumeUrl}>Resume <Arrow /></a>
+        <a className="nav-contact" href="#contact" onClick={() => setMenuOpen(false)}>Let&apos;s talk <Arrow /></a>
       </nav>
 
       <section className="hero section-wrap" id="home"><ThreeField /><div className="hero-copy reveal"><h1><strong>Ankit Verma</strong></h1><p className="hero-intro">I build thoughtful digital experiences with a blend of software engineering, AI thinking, and visual storytelling.</p><div className="hero-actions"><a className="button button-primary" href="#work">View my work <Arrow /></a><a className="text-link" href="#contact">Let&apos;s connect <Arrow /></a></div></div><div className="hero-art" aria-label="Abstract visualization of data, code, and a camera frame" role="img"><div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" /><div className="art-core"><span>01</span><b>ML</b><span>11</span></div><div className="art-label label-top">neural_network <i>●</i></div><div className="art-label label-bottom">frame_001 / explore</div><div className="art-lines"><span /><span /><span /><span /><span /></div></div><div className="scroll-cue"><span>Scroll to explore</span><i /></div></section>
