@@ -5,7 +5,7 @@ import ThreeField from "@/components/ThreeField";
 import CursorDot from "@/components/CursorDot";
 
 const navItems = ["About", "Work", "AI/ML", "GIGCEL", "Journey", "Contact"];
-const resumeUrl = "https://docs.google.com/document/d/1zG2knTd5Mjgrvuo0tverLD3LSwO4KuOt1T4pL2u3ues/edit?tab=t.0";
+const resumeUrl = "/resume";
 const projects = [
   { number: "01", category: "PRODUCT / MOBILE", title: "MatsyaSetu App", description: "A TypeScript application exploring a focused product experience.", tags: ["TypeScript", "App"], href: "https://github.com/Goofy105114/MatsyaSetu-App", code: "const project = 'matsyasetu-app';" },
   { number: "02", category: "AI / NLP", title: "Python Chatbot", description: "A conversational Python project using natural language toolkit ideas.", tags: ["Python", "NLTK"], href: "https://github.com/Goofy105114/python-chatbot", code: "bot.listen(message);" },
