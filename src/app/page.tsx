@@ -13,7 +13,7 @@ const projects = [
   { number: "04", category: "FULL-STACK", title: "Machine Link", description: "A JavaScript project exploring application development and interaction.", tags: ["JavaScript", "Web"], href: "https://github.com/Goofy105114/machine-link-project", code: "machine.connect(user);" },
 ];
 const learning = ["Python", "NumPy", "Pandas", "Matplotlib", "Scikit-learn", "Statistics", "Mathematics for ML", "Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Generative AI", "LLMs", "MLOps", "Data Engineering"];
-const engineering = ["C++", "Python", "JavaScript", "React", "Node.js", "REST APIs", "SQL", "PostgreSQL", "MongoDB", "Git / GitHub", "Cloud", "AWS / GCP", "Docker", "DevOps", "System Design"];
+const engineering = ["Python", "C++", "JavaScript", "SQL", "HTML", "CSS", "React", "PostgreSQL", "MongoDB", "AWS", "Git", "GitHub", "DevOps", "System Design"];
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
 
