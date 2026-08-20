@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ThreeField from "@/components/ThreeField";
 import CursorDot from "@/components/CursorDot";
 
-const navItems = ["About", "Work", "AI/ML", "GIGCEL", "Journey", "Contact"];
+const navItems = ["Home", "About", "Services", "Portfolio", "Contact"];
 const resumeUrl = "/resume";
 const projects = [
   { number: "01", category: "PRODUCT / MOBILE", title: "MatsyaSetu App", description: "A TypeScript application exploring a focused product experience.", tags: ["TypeScript", "App"], href: "https://github.com/Goofy105114/MatsyaSetu-App", code: "const project = 'matsyasetu-app';" },
@@ -33,14 +33,41 @@ export default function Home() {
   return (
     <main>
       <CursorDot />
-      <nav className="nav-shell" aria-label="Primary navigation">
-        <a className="brand" href="#home" onClick={() => setMenuOpen(false)}><span className="brand-mark">G</span><span>GOOFY<span className="brand-dot">.</span></span></a>
-        <button className="menu-toggle" aria-expanded={menuOpen} aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
-        <div className={`nav-links ${menuOpen ? "is-open" : ""}`}>{navItems.map((item) => <a key={item} className={activeSection === item ? "active" : ""} href={`#${item.toLowerCase().replace("/", "-")}`} onClick={() => setMenuOpen(false)}>{item}</a>)}</div>
-        <a className="nav-contact" href="#contact">Let&apos;s talk <Arrow /></a>
-      </nav>
+      <div className="hero-shell">
+        <nav className="nav-shell modern-nav" aria-label="Primary navigation">
+          <a className="brand" href="#home" onClick={() => setMenuOpen(false)}><span className="brand-mark">A</span><span>Ankit Verma<span className="brand-dot">.</span></span></a>
+          <button className="menu-toggle" aria-expanded={menuOpen} aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
+          <div className={`nav-links ${menuOpen ? "is-open" : ""}`}>{navItems.map((item) => <a key={item} className={activeSection === item ? "active" : ""} href={item === "Home" ? "#home" : `#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{item}</a>)}</div>
+          <a className="nav-contact" href={resumeUrl}>Resume <Arrow /></a>
+        </nav>
 
-      <section className="hero section-wrap" id="home"><ThreeField /><div className="hero-copy reveal"><p className="eyebrow"><span className="status-dot" /> Ankit Verma</p><h1>Building<br /><em>intelligent</em><br />systems with a<br /><em>storyteller&apos;s eye.</em></h1><p className="hero-intro">I&apos;m a Computer Science student exploring AI/ML, software engineering, and meaningful digital experiences.</p><div className="hero-actions"><a className="button button-primary" href="#work">View my work <Arrow /></a><a className="button button-outline" href={resumeUrl} target="_blank" rel="noreferrer">Resume <Arrow /></a><a className="text-link" href="#contact">Let&apos;s connect <Arrow /></a></div></div><div className="hero-art" aria-label="Abstract visualization of data, code, and a camera frame" role="img"><div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" /><div className="art-core"><span>01</span><b>AI</b><span>11</span></div><div className="art-label label-top">neural_network <i>●</i></div><div className="art-label label-bottom">frame_001 / explore</div><div className="art-lines"><span /><span /><span /><span /><span /></div></div><div className="scroll-cue"><span>Scroll to explore</span><i /></div></section>
+        <section className="hero section-wrap" id="home">
+          <div className="hero-copy reveal">
+            <h1>Hi, I&apos;m Ankit Verma<br /><span>Frontend Developer</span></h1>
+            <p className="hero-intro">I build thoughtful digital experiences with a blend of software engineering, AI thinking, and visual storytelling.</p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#work">Hire Me</a>
+              <a className="button button-secondary" href="#contact">Let&apos;s Talk</a>
+            </div>
+            <div className="social-strip" aria-label="Social links">
+              <a href="https://github.com/Goofy105114" target="_blank" rel="noreferrer">f</a>
+              <a href="https://www.linkedin.com/in/ankitverma10/" target="_blank" rel="noreferrer">in</a>
+              <a href="https://www.youtube.com/@Gigcel" target="_blank" rel="noreferrer">▶</a>
+            </div>
+          </div>
+
+          <div className="hero-portrait" aria-label="Stylized portrait illustration" role="img">
+            <div className="portrait-glow" />
+            <div className="portrait-face">
+              <span className="streak streak-one" />
+              <span className="streak streak-two" />
+              <span className="streak streak-three" />
+              <span className="streak streak-four" />
+              <span className="streak streak-five" />
+            </div>
+          </div>
+        </section>
+      </div>
 
       <section className="intro-band section-wrap" id="about"><div className="section-kicker">01 / About</div><div className="about-layout"><h2>A curious mind,<br /><em>under construction.</em></h2><div className="about-body"><p>My journey started with software development: learning how small ideas become things people can use. Over time, the questions got bigger.</p><p>Now I&apos;m moving toward AI/ML and Data Science, learning how data, mathematics, and thoughtful engineering can make systems more useful. Alongside it all, I make room for a camera, a cut, and a good story.</p><span className="signature">Ankit Verma <small>/ 2026</small></span></div></div><div className="timeline" aria-label="My learning evolution">{["Coding", "Web Development", "Full-Stack", "Data", "AI / ML", "Engineering"].map((item, index) => <div className="timeline-item" key={item}><span>0{index + 1}</span><b>{item}</b>{index < 5 && <i />}</div>)}</div></section>
 
