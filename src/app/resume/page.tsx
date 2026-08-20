@@ -55,8 +55,8 @@ export default function ResumePage() {
             <span className="brand-mark">G</span>
             <span>GOOFY<span className="brand-dot">.</span></span>
           </Link>
-          <a className="button button-outline" href="https://docs.google.com/document/d/1zG2knTd5Mjgrvuo0tverLD3LSwO4KuOt1T4pL2u3ues/edit?tab=t.0" target="_blank" rel="noreferrer">
-            Open resume <span>↗</span>
+          <a className="button button-outline" href="https://docs.google.com/document/d/1zG2knTd5Mjgrvuo0tverLD3LSwO4KuOt1T4pL2u3ues/export?format=pdf" target="_blank" rel="noreferrer">
+            Download <span>↗</span>
           </a>
         </div>
 
