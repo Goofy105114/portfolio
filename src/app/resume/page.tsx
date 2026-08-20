@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CursorDot from "@/components/CursorDot";
 
 const techStack = [
   "Python",
@@ -47,6 +48,7 @@ const projects = [
 export default function ResumePage() {
   return (
     <main className="resume-shell">
+      <CursorDot />
       <div className="resume-wrap">
         <div className="resume-topbar">
           <Link href="/" className="brand" aria-label="Back to portfolio home">
